@@ -8,7 +8,9 @@ const customTextBodyStyle = StyleSheet.create({
         fontFamily: 'Commissioner-Light',
         fontWeight: "400",
         color: neutralColor.darkGray,
-        lineHeight: 23
+        lineHeight: 23,
+        marginBottom: 10,
+        marginTop: 10
     }
 })
 

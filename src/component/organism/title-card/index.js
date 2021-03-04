@@ -5,15 +5,9 @@ import MasterclassSVG from '../../../../assets/svg/masterclass';
 import { Button } from '../../atomic/button';
 import { CustomTextBody } from '../../atomic/custom-text-body';
 import { Card } from '../../molecule/card';
+import { sharedCardStyle } from '../../../style'
 
 const titleCardStyle = StyleSheet.create({
-    mainTitle: {
-        textAlign: 'center',
-        fontFamily: 'Commissioner-Medium',
-        fontSize: 22,
-        fontWeight: "700",
-        marginTop: 12
-    },
     description: {
         marginTop: 24,
         marginBottom: 24
@@ -37,7 +31,7 @@ export const TitleCard = () => {
             <View style={titleCardStyle.masterclass}>
                 <MasterclassSVG />
             </View>
-            <Text style={titleCardStyle.mainTitle}>
+            <Text style={sharedCardStyle.mainTitle}>
                 Mastercraft Bamboo Monitor Riser
             </Text>
             <CustomTextBody style={titleCardStyle.description}>

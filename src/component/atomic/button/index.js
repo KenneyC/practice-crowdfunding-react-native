@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native'
-import { primaryColour } from '../../../style';
+import { neutralColor, primaryColour } from '../../../style';
 
 const buttonStyle = StyleSheet.create({
     button: {
@@ -15,16 +15,20 @@ const buttonStyle = StyleSheet.create({
         fontFamily: 'Commissioner-Medium',
         fontSize: 17,
         fontWeight: "700"
+    },
+    disabled: {
+        opacity: 0.5,
+        backgroundColor: neutralColor.darkGray
     }
 })
 
 export const Button = (props) => {
-    const { text, style } = props;
+    const { text, style, textStyle, disabled } = props;
 
     return (
-        <TouchableOpacity style={style}>
-            <View style={[buttonStyle.button]}>
-                <Text style={buttonStyle.buttonText}>
+        <TouchableOpacity style={style} disabled={disabled}>
+            <View style={[buttonStyle.button, disabled ? buttonStyle.disabled : {}]}>
+                <Text style={[buttonStyle.buttonText, textStyle]}>
                     {text}
                 </Text>
             </View>

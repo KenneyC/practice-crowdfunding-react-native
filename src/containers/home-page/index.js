@@ -3,6 +3,8 @@ import {SafeAreaView, ScrollView, StyleSheet, View, Dimensions} from 'react-nati
 import { Hero } from '../../component/atomic/hero';
 import { Ribbon } from '../../component/molecule/ribbon';
 import { TitleCard } from '../../component/organism/title-card';
+import { StatusCard } from '../../component/organism/status-card';
+import { AboutCard } from '../../component/organism/about-card';
 
 const winSize = Dimensions.get('window');
 
@@ -28,6 +30,8 @@ export const HomePage = () => {
                 </View>
                 <View style={homePageStyle.mainBody}>
                     <TitleCard />
+                    <StatusCard currentFunding={(89914).toLocaleString()} backers={(5007).toLocaleString()} daysLeft={56}/>
+                    <AboutCard />
                 </View>
             </ScrollView>
         </SafeAreaView>

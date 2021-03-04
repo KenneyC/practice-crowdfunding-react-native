@@ -10,7 +10,8 @@ const cardStyle = StyleSheet.create({
         paddingLeft: 30,
         paddingRight: 30,
         paddingTop: 40,
-        paddingBottom: 40
+        paddingBottom: 40,
+        marginBottom: 25,
     }
 })
 
