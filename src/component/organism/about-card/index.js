@@ -18,7 +18,7 @@ const aboutCardStyle = StyleSheet.create({
 
 export const AboutCard = () => {
     return (
-        <Card>
+        <Card padding>
             <Text style={[sharedCardStyle.mainTitle, aboutCardStyle.sharedText]}>About this project</Text>
             <View style={aboutCardStyle.description}>
                 <CustomTextBody style={aboutCardStyle.sharedText}>
@@ -30,7 +30,7 @@ export const AboutCard = () => {
             </View>
             <View>
                 {pledges.map((pledge) => 
-                    (<PledgeCard key={pledge.title} title={pledge.title} unitsLeft={pledge.unitsLeft} description={pledge.description} price={pledge.price}/>)
+                    (<PledgeCard home key={pledge.title} title={pledge.title} unitsLeft={pledge.unitsLeft} description={pledge.description} price={pledge.price}/>)
                 )}
             </View>
         </Card>

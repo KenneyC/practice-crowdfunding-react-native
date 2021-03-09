@@ -21,7 +21,7 @@ export const StatusCard = (props) => {
     const { currentFunding, backers, daysLeft } = props;
 
     return (
-        <Card>
+        <Card padding >
             <Text style={statusCardStyle.mainText}>
                 ${currentFunding}
             </Text>

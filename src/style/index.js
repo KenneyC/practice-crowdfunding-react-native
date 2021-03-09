@@ -10,6 +10,13 @@ export const sharedCardStyle = StyleSheet.create({
     }
 })
 
+export const sharedModalStyle = StyleSheet.create({
+    menuWrapper: {
+        height: 'auto',
+        width: '100%'
+    },
+})
+
 export const primaryColour = {
     moderateCyan: '#3cb4ac',
     darkCyan: '#147b74'

@@ -7,19 +7,22 @@ const cardStyle = StyleSheet.create({
         borderRadius: 9,
         borderColor: '#e6e6e6',
         borderWidth: 1,
-        paddingLeft: 30,
-        paddingRight: 30,
-        paddingTop: 40,
-        paddingBottom: 40,
         marginBottom: 25,
     }
 })
 
+const cardPadding = {
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 40,
+    paddingBottom: 40 
+}
+
 export const Card = (props) => {
-    const { children, style } = props;
+    const { children, style, padding} = props;
 
     return (
-        <View style={[cardStyle.card, style]}>
+        <View style={[cardStyle.card, padding ? cardPadding : {}, style]}>
             {children}
         </View>
     )

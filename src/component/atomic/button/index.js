@@ -23,10 +23,10 @@ const buttonStyle = StyleSheet.create({
 })
 
 export const Button = (props) => {
-    const { text, style, textStyle, disabled } = props;
+    const { text, style, textStyle, disabled, onPress } = props;
 
     return (
-        <TouchableOpacity style={style} disabled={disabled}>
+        <TouchableOpacity style={style} disabled={disabled} onPress={onPress}>
             <View style={[buttonStyle.button, disabled ? buttonStyle.disabled : {}]}>
                 <Text style={[buttonStyle.buttonText, textStyle]}>
                     {text}
