@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import {View, Text, StyleSheet} from 'react-native';
 import { neutralColor, primaryColour } from '../../../style';
 import { Button } from '../../atomic/button';
@@ -7,6 +8,7 @@ import { Divider } from '../../atomic/divider';
 import { Input } from '../../atomic/input';
 import { RadioButton } from '../../atomic/radio-button';
 import { Card } from '../card';
+import { openModal } from '../../../redux/actions/modal';
 
 const pledgeStyle = StyleSheet.create({
     title: {
@@ -75,9 +77,14 @@ const pledgeStyle = StyleSheet.create({
 
 export const PledgeCard = (props) => {
     const { title, price, unitsLeft, description, home, selected } = props;
+    const dispatch = useDispatch();
     
     const withOpacity = (style) => {
         return [style, { opacity: unitsLeft ? 1 : 0.5}];
+    }
+
+    const handleContinue = () => {
+        dispatch(openModal('complete'))
     }
 
     const selectedStyle = {
@@ -111,7 +118,7 @@ export const PledgeCard = (props) => {
                                 <CustomTextBody style={{marginTop: 30}}>Enter your pledge</CustomTextBody>
                                 <View style={pledgeStyle.input}>
                                     <Input style={pledgeStyle.pledgePrice} defaultValue={price.toString()} />
-                                    <Button text="Continue" style={pledgeStyle.continueButton}/>
+                                    <Button text="Continue" style={pledgeStyle.continueButton} onPress={handleContinue}/>
                                 </View>
                             </View> :
                             <></>
